@@ -87,8 +87,6 @@ h1,h2,h3{font-family:'Bebas Neue',sans-serif;font-weight:400;line-height:.95;let
 .hero__stats div{display:flex;flex-direction:column}
 .hero__stats strong{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,3rem);color:var(--ink);line-height:1}
 .hero__stats span{color:var(--muted);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;margin-top:6px}
-.hero__scroll{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);font-size:1.4rem;color:var(--muted);animation:bob 1.8s infinite}
-@keyframes bob{50%{transform:translate(-50%,8px)}}
 
 /* ============ MARQUEE ============ */
 .marquee{background:var(--accent);overflow:hidden;padding:14px 0;white-space:nowrap}
