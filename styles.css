@@ -303,7 +303,7 @@ h1,h2,h3{font-family:'Bebas Neue',sans-serif;font-weight:400;line-height:.95;let
     .hero__inner{display:flex;justify-content:center}
     .hero__content{max-width:640px;text-align:center}
     .hero__sub{margin:24px auto 30px}
-    .hero__actions{margin-top:84px;justify-content:center}
+    .hero__actions{margin-top:120px;justify-content:center}
     .hero__stats{justify-content:center}
 }
 
