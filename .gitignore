@@ -1,0 +1,9 @@
+# OS
+.DS_Store
+seraink/.DS_Store
+
+# JetBrains / WebStorm
+.idea/
+
+# Logs
+*.log

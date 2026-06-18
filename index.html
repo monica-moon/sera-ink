@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SERA INK. Custom tattoo studio. Bold blackwork, fine line, and color realism by award-winning artists.">
+    <title>SERA INK · Tattoo Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+    <a href="#home" class="nav__brand">SERA <span>INK</span></a>
+    <nav class="nav__links" id="navLinks">
+        <a href="#work">Work</a>
+        <a href="#artists">Artists</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#book" class="nav__cta">Book Now</a>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </button>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+    <video class="hero__video" autoplay muted loop playsinline poster="seraink/work-backpiece.png">
+        <source src="seraink/trima.mov" type="video/mp4">
+    </video>
+    <div class="hero__overlay"></div>
+    <span class="hero__ghost" aria-hidden="true">SERA</span>
+    <div class="hero__inner">
+        <div class="hero__content">
+            <p class="hero__eyebrow">Est. 2014 · Downtown Studio</p>
+            <h1 class="hero__title">WHERE ART<br>MEETS <em>SKIN</em></h1>
+            <p class="hero__sub">Custom blackwork, fine line &amp; color realism. Walk in with an idea, walk out with a masterpiece.</p>
+            <div class="hero__actions">
+                <a href="#book" class="btn btn--solid">Book a Session</a>
+                <a href="#work" class="btn btn--ghost">View Portfolio</a>
+            </div>
+        </div>
+    </div>
+    <div class="hero__stats">
+        <div><strong data-count="12">0</strong><span>Years Inking</span></div>
+        <div><strong data-count="9000">0</strong><span>Tattoos Done</span></div>
+        <div><strong data-count="6">0</strong><span>Resident Artists</span></div>
+    </div>
+    <a href="#work" class="hero__scroll" aria-label="Scroll down">↓</a>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee">
+    <div class="marquee__track">
+        <span>BLACKWORK ✦ FINE LINE ✦ REALISM ✦ TRADITIONAL ✦ JAPANESE ✦ GEOMETRIC ✦ SCRIPT ✦ COVER-UPS ✦</span>
+        <span>BLACKWORK ✦ FINE LINE ✦ REALISM ✦ TRADITIONAL ✦ JAPANESE ✦ GEOMETRIC ✦ SCRIPT ✦ COVER-UPS ✦</span>
+    </div>
+</div>
+
+<!-- ============ WORK / GALLERY ============ -->
+<section class="section work" id="work">
+    <div class="section__head reveal" data-ghost="Ink">
+        <p class="kicker">Portfolio</p>
+        <h2 class="section__title">Selected <em>Work</em></h2>
+        <p class="section__lead">A glimpse of recent pieces. Every tattoo is one-of-one, designed for the person wearing it.</p>
+    </div>
+
+    <div class="filters reveal">
+        <button class="filter is-active" data-filter="all">All</button>
+        <button class="filter" data-filter="blackwork">Blackwork</button>
+        <button class="filter" data-filter="fineline">Fine Line</button>
+        <button class="filter" data-filter="realism">Realism</button>
+        <button class="filter" data-filter="color">Color</button>
+    </div>
+
+    <div class="gallery" id="gallery">
+        <!-- items injected by script.js -->
+    </div>
+</section>
+
+<!-- ============ ARTISTS ============ -->
+<section class="section artists" id="artists">
+    <div class="section__head reveal" data-ghost="Crew">
+        <p class="kicker">The Crew</p>
+        <h2 class="section__title">Meet the <em>Artists</em></h2>
+    </div>
+    <div class="artist-grid">
+        <article class="artist reveal">
+            <div class="artist__img"><img src="seraink/arr.png" alt="Artist Ren Aoki"></div>
+            <div class="artist__body">
+                <h3>Ren Aoki</h3>
+                <p class="artist__role">Blackwork · Illustrative</p>
+                <p class="artist__bio">Bold blackwork, ornamental detail, and dark illustrative pieces drawn by hand.</p>
+                <div class="artist__social"><a href="#">IG</a><a href="#">Behance</a></div>
+            </div>
+        </article>
+        <article class="artist reveal">
+            <div class="artist__img"><img src="seraink/artist-nadia.png" alt="Artist Nadia Cole"></div>
+            <div class="artist__body">
+                <h3>Nadia Cole</h3>
+                <p class="artist__role">Color & Realism</p>
+                <p class="artist__bio">Photoreal portraits and saturated neo-traditional color that holds for decades.</p>
+                <div class="artist__social"><a href="#">IG</a><a href="#">Behance</a></div>
+            </div>
+        </article>
+        <article class="artist reveal">
+            <div class="artist__img"><img src="seraink/artist-kenji.png" alt="Artist Kenji Mori"></div>
+            <div class="artist__body">
+                <h3>Kenji Mori</h3>
+                <p class="artist__role">Japanese · Fine Line</p>
+                <p class="artist__bio">Traditional Japanese sleeves and delicate single-needle work, sketched fresh for every client.</p>
+                <div class="artist__social"><a href="#">IG</a><a href="#">Behance</a></div>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section services" id="services">
+    <div class="section__head reveal" data-ghost="Rates">
+        <p class="kicker">What We Do</p>
+        <h2 class="section__title">Services &amp; <em>Rates</em></h2>
+        <p class="section__lead">Transparent pricing. Custom work is quoted per project. These are starting points.</p>
+    </div>
+    <div class="cards">
+        <div class="card reveal">
+            <h3>Custom Design</h3>
+            <p>Full collaboration from concept to stencil. One-of-one art built around your story.</p>
+            <p class="card__price">from $180<small>/hr</small></p>
+        </div>
+        <div class="card reveal">
+            <h3>Flash & Walk-ins</h3>
+            <p>Ready-to-go designs off the wall. Quick, clean, and fairly priced. Saturdays only.</p>
+            <p class="card__price">from $120<small>/piece</small></p>
+        </div>
+        <div class="card reveal">
+            <h3>Cover-ups & Rework</h3>
+            <p>Turn regret into a feature. Free consultation to map out the transformation.</p>
+            <p class="card__price">from $220<small>/hr</small></p>
+        </div>
+        <div class="card reveal">
+            <h3>Large-Scale Pieces</h3>
+            <p>Sleeves, backs, and bodysuits booked in sessions with a day-rate.</p>
+            <p class="card__price">$900<small>/day</small></p>
+        </div>
+    </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="section process" id="process">
+    <div class="section__head reveal" data-ghost="Ritual">
+        <p class="kicker">How It Works</p>
+        <h2 class="section__title">From Idea to <em>Ink</em></h2>
+    </div>
+    <div class="steps">
+        <div class="step reveal"><span>1</span><h3>Consult</h3><p>Tell us your concept, placement, and budget. We talk it through, no pressure.</p></div>
+        <div class="step reveal"><span>2</span><h3>Design</h3><p>Your artist sketches a custom piece and refines it with you until it's perfect.</p></div>
+        <div class="step reveal"><span>3</span><h3>Session</h3><p>Sterile, single-use everything. We tattoo at your pace with breaks when you need.</p></div>
+        <div class="step reveal"><span>4</span><h3>Heal</h3><p>Aftercare kit + guidance so your tattoo stays crisp for life. We've got you.</p></div>
+    </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section quotes">
+    <div class="quotes__inner reveal">
+        <p class="quotes__mark">“</p>
+        <blockquote id="quoteText">Mara turned a vague idea into the best piece on my body. The studio is spotless and the vibe is unreal.</blockquote>
+        <p class="quotes__author" id="quoteAuthor">Sam R., full sleeve</p>
+        <div class="quotes__dots" id="quoteDots"></div>
+    </div>
+</section>
+
+<!-- ============ BOOKING ============ -->
+<section class="section book" id="book">
+    <div class="book__grid">
+        <div class="book__info reveal">
+            <p class="kicker">Get Inked</p>
+            <h2 class="section__title">Book Your <em>Session</em></h2>
+            <p class="section__lead">Drop your details and your idea. We reply within 24 hours with a quote and available dates.</p>
+            <ul class="book__contact">
+                <li><strong>Studio</strong> 214 Ironside Ave, Unit 3</li>
+                <li><strong>Hours</strong> Tue–Sat · 11am–8pm</li>
+                <li><strong>Phone</strong> (555) 018-2240</li>
+                <li><strong>Email</strong> hello@seraink.studio</li>
+            </ul>
+        </div>
+        <form class="book__form reveal" id="bookForm" novalidate>
+            <div class="field">
+                <input type="text" id="name" name="name" required placeholder=" ">
+                <label for="name">Name</label>
+            </div>
+            <div class="field">
+                <input type="email" id="email" name="email" required placeholder=" ">
+                <label for="email">Email</label>
+            </div>
+            <div class="field">
+                <select id="style" name="style" required>
+                    <option value="" disabled selected></option>
+                    <option>Blackwork</option>
+                    <option>Fine Line</option>
+                    <option>Realism</option>
+                    <option>Color</option>
+                    <option>Cover-up</option>
+                    <option>Not sure yet</option>
+                </select>
+                <label for="style" class="label--static">Preferred Style</label>
+            </div>
+            <div class="field">
+                <textarea id="idea" name="idea" rows="4" required placeholder=" "></textarea>
+                <label for="idea">Describe your idea, size & placement</label>
+            </div>
+            <button type="submit" class="btn btn--solid btn--full">Request Booking</button>
+            <p class="book__note" id="formNote"></p>
+        </form>
+    </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+    <div class="footer__top">
+        <a href="#home" class="nav__brand">SERA <span>INK</span></a>
+        <nav class="footer__links">
+            <a href="#work">Work</a>
+            <a href="#artists">Artists</a>
+            <a href="#services">Services</a>
+            <a href="#book">Book</a>
+        </nav>
+        <div class="footer__social">
+            <a href="#">Instagram</a><a href="#">TikTok</a><a href="#">Facebook</a>
+        </div>
+    </div>
+    <div class="footer__bottom">
+        <p>© 2026 SERA INK Tattoo Studio. All rights reserved.</p>
+        <p>Designed for the bold. 18+ · Valid ID required.</p>
+    </div>
+</footer>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox">
+    <button class="lightbox__close" id="lbClose" aria-label="Close">×</button>
+    <button class="lightbox__nav lightbox__prev" id="lbPrev" aria-label="Previous">‹</button>
+    <img src="" alt="" id="lbImg">
+    <button class="lightbox__nav lightbox__next" id="lbNext" aria-label="Next">›</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
