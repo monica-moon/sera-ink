@@ -63,20 +63,7 @@
         });
     }
 
-    /* ---------- FILTERS ---------- */
-    const filters = document.querySelectorAll('.filter');
     const tiles = () => Array.from(document.querySelectorAll('.tile'));
-    filters.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filters.forEach(f => f.classList.remove('is-active'));
-            btn.classList.add('is-active');
-            const f = btn.dataset.filter;
-            tiles().forEach(t => {
-                const show = f === 'all' || t.dataset.cat.split(' ').includes(f);
-                t.classList.toggle('is-hidden', !show);
-            });
-        });
-    });
 
     /* ---------- LIGHTBOX ---------- */
     const lb = document.getElementById('lightbox');
