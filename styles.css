@@ -82,7 +82,7 @@ h1,h2,h3{font-family:'Bebas Neue',sans-serif;font-weight:400;line-height:.95;let
 .hero__title em{display:inline-block}
 .hero__sub{max-width:480px;color:#d7d2c9;font-size:1.05rem;margin:24px 0 36px;
     font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic}
-.hero__actions{display:flex;gap:16px;flex-wrap:wrap}
+.hero__actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:20px}
 .hero__stats{position:relative;z-index:1;display:flex;gap:clamp(28px,6vw,72px);margin-top:auto;padding-top:54px}
 .hero__stats div{display:flex;flex-direction:column}
 .hero__stats strong{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,3rem);color:var(--ink);line-height:1}
@@ -303,7 +303,7 @@ h1,h2,h3{font-family:'Bebas Neue',sans-serif;font-weight:400;line-height:.95;let
     .hero__inner{display:flex;justify-content:center}
     .hero__content{max-width:640px;text-align:center}
     .hero__sub{margin:24px auto 30px}
-    .hero__actions{margin-top:26px;justify-content:center}
+    .hero__actions{margin-top:52px;justify-content:center}
     .hero__stats{justify-content:center}
 }
 
