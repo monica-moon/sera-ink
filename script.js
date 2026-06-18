@@ -4,35 +4,66 @@
 (function () {
     'use strict';
 
-    /* ---------- GALLERY DATA (add/remove entries to match your photos) ---------- */
+    /* ---------- GALLERY DATA (add/remove entries to match your photos) ----------
+       Each piece can carry several tags, so it shows up under multiple filters.   */
+    const TAGS = {
+        blackwork: 'Blackwork', fineline: 'Fine Line', realism: 'Realism', color: 'Color',
+        japanese: 'Japanese', geometric: 'Geometric', ornamental: 'Ornamental',
+        blackgrey: 'Black & Grey', floral: 'Floral'
+    };
+
     const WORKS = [
-        { cat: 'realism',   title: 'Portrait Sleeve',    tag: 'Realism',   shape: 'tall', file: 'seraink/work-face.png' },
-        { cat: 'fineline',  title: 'Botanical Spine',    tag: 'Fine Line', shape: '',     file: 'seraink/line.png' },
-        { cat: 'blackwork', title: 'Raven Geometric',    tag: 'Blackwork', shape: '',     file: 'seraink/work-raven.png' },
-        { cat: 'color',     title: 'Warrior Watercolor', tag: 'Color',     shape: 'tall', file: 'seraink/work-warrior.png' },
-        { cat: 'realism',   title: 'Koi Sleeve',         tag: 'Realism',   shape: '',     file: 'seraink/koi.png' },
-        { cat: 'color',     title: 'Japanese Back Piece',tag: 'Japanese',  shape: 'tall', file: 'seraink/work-backpiece.png' },
-        { cat: 'fineline',  title: 'Spine Blossom',      tag: 'Fine Line', shape: '',     file: 'seraink/work-spine.png' },
-        { cat: 'fineline',  title: 'Ornamental Forearm', tag: 'Fine Line', shape: '',     file: 'seraink/orn.png' },
-        { cat: 'blackwork', title: 'Geometric Calf',     tag: 'Blackwork', shape: '',     file: 'seraink/calf.png' }
+        { title: 'Portrait Sleeve',     shape: 'tall', file: 'seraink/work-face.png',      tags: ['realism', 'blackgrey'] },
+        { title: 'Botanical Spine',     shape: '',     file: 'seraink/line.png',           tags: ['fineline', 'floral'] },
+        { title: 'Raven Geometric',     shape: '',     file: 'seraink/work-raven.png',     tags: ['blackwork', 'geometric'] },
+        { title: 'Warrior Watercolor',  shape: 'tall', file: 'seraink/work-warrior.png',   tags: ['color', 'realism'] },
+        { title: 'Koi Sleeve',          shape: '',     file: 'seraink/koi.png',            tags: ['japanese', 'blackgrey', 'realism'] },
+        { title: 'Japanese Back Piece', shape: 'tall', file: 'seraink/work-backpiece.png', tags: ['japanese', 'color'] },
+        { title: 'Spine Blossom',       shape: '',     file: 'seraink/work-spine.png',     tags: ['fineline', 'floral'] },
+        { title: 'Ornamental Forearm',  shape: '',     file: 'seraink/orn.png',            tags: ['fineline', 'ornamental'] },
+        { title: 'Geometric Calf',      shape: '',     file: 'seraink/calf.png',           tags: ['blackwork', 'geometric'] }
     ];
 
     const gallery = document.getElementById('gallery');
 
-    WORKS.forEach((w, i) => {
+    function makeTile(w) {
         const tile = document.createElement('figure');
         tile.className = `tile ${w.shape}`.trim();
-        tile.dataset.cat = w.cat;
-        tile.dataset.index = i;
+        tile.dataset.cat = w.tags.join(' ');
         tile.dataset.full = w.file;
+        const chips = w.tags.map(t => `<span class="tile__tag">${TAGS[t] || t}</span>`).join('');
         tile.innerHTML = `
             <img src="${w.file}" alt="${w.title}" loading="lazy">
             <figcaption class="tile__meta">
                 <strong>${w.title}</strong>
-                <span>${w.tag}</span>
+                <span class="tile__tags">${chips}</span>
             </figcaption>`;
-        gallery.appendChild(tile);
-    });
+        return tile;
+    }
+
+    WORKS.forEach(w => gallery.appendChild(makeTile(w)));
+
+    /* ---------- LOAD MORE (appends more pieces for a deeper portfolio) ---------- */
+    const loadMore = document.getElementById('loadMore');
+    let loads = 0;
+    if (loadMore) {
+        loadMore.addEventListener('click', () => {
+            loads++;
+            const active = document.querySelector('.filter.is-active');
+            const f = active ? active.dataset.filter : 'all';
+            WORKS.forEach(w => {
+                const tile = makeTile(w);
+                tile.classList.add('tile--new');
+                if (f !== 'all' && !tile.dataset.cat.split(' ').includes(f)) tile.classList.add('is-hidden');
+                gallery.appendChild(tile);
+                requestAnimationFrame(() => tile.classList.remove('tile--new'));
+            });
+            if (loads >= 2) {
+                loadMore.textContent = 'Follow @sera.ink for more';
+                loadMore.disabled = true;
+            }
+        });
+    }
 
     /* ---------- FILTERS ---------- */
     const filters = document.querySelectorAll('.filter');
@@ -43,7 +74,7 @@
             btn.classList.add('is-active');
             const f = btn.dataset.filter;
             tiles().forEach(t => {
-                const show = f === 'all' || t.dataset.cat === f;
+                const show = f === 'all' || t.dataset.cat.split(' ').includes(f);
                 t.classList.toggle('is-hidden', !show);
             });
         });
