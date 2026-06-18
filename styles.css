@@ -360,4 +360,6 @@ h1,h2,h3{font-family:'Bebas Neue',sans-serif;font-weight:400;line-height:.95;let
 @media(prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important}
     .reveal{opacity:1;transform:none}
+    /* keep the brand marquee scrolling even with Reduce Motion / Low Power Mode */
+    .marquee__track{animation:scroll 28s linear infinite!important}
 }
