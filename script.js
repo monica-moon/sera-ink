@@ -31,12 +31,10 @@
         tile.className = `tile ${w.shape}`.trim();
         tile.dataset.cat = w.tags.join(' ');
         tile.dataset.full = w.file;
-        const chips = w.tags.map(t => `<span class="tile__tag">${TAGS[t] || t}</span>`).join('');
         tile.innerHTML = `
             <img src="${w.file}" alt="${w.title}" loading="lazy">
             <figcaption class="tile__meta">
                 <strong>${w.title}</strong>
-                <span class="tile__tags">${chips}</span>
             </figcaption>`;
         return tile;
     }
